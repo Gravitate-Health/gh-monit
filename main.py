@@ -113,7 +113,7 @@ def main():
                         metric_path = f"""gh.focusing.{bundleid["name"]}.{pid}.{lens}"""
                         send_to_graphite(metric_path, status_code)
         # time.sleep(3600)
-        time.sleep(1800)
+        time.sleep(600)
 
 
 if __name__ == "__main__":

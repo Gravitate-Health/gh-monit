@@ -12,30 +12,57 @@ GRAPHITE_PORT = os.getenv(
 )  # Default port for Carbon plaintext protocol
 
 print(GRAPHITE_HOST, GRAPHITE_PORT)
-WEBSITE_URLS = [
+
+LENSES = [
+    "lens-selector-mvp2_HIV",
+    "lens-selector-mvp2_allergy",
+    "lens-selector-mvp2_diabetes",
+    "lens-selector-mvp2_interaction",
+    "lens-selector-mvp2_intolerance",
+    "lens-selector-mvp2_pregnancy",
+]
+
+PATIENT_IDS = ["alicia-1", "Cecilia-1", "Pedro-1"]
+BUNDLES = [
     {
-        "url": "https://fosps.gravitatehealth.eu/focusing/focus/bundlepackageleaflet-es-94a96e39cfdcd8b378d12dd4063065f9?preprocessors=preprocessing-service-manual&patientIdentifier=alicia-1&lenses=lens-selector-mvp2_pregnancy",
-        "desc": "focusing.biktarvy.alicia.pregnancy",
+        "id": "bundlepackageleaflet-es-94a96e39cfdcd8b378d12dd4063065f9",
+        "name": "biktarvy",
     },
     {
-        "url": "https://fosps.gravitatehealth.eu/focusing/focus/bundlepackageleaflet-es-925dad38f0afbba36223a82b3a766438?preprocessors=preprocessing-service-manual&patientIdentifier=alicia-1&lenses=lens-selector-mvp2_pregnancy",
-        "desc": "focusing.calcio.alicia.pregnancy",
+        "id": "bundlepackageleaflet-es-925dad38f0afbba36223a82b3a766438",
+        "name": "calcio",
     },
     {
-        "url": "https://fosps.gravitatehealth.eu/focusing/focus/bundlepackageleaflet-es-2f37d696067eeb6daf1111cfc3272672?preprocessors=preprocessing-service-manual&patientIdentifier=alicia-1&lenses=lens-selector-mvp2_pregnancy",
-        "desc": "focusing.tegretol.alicia.pregnancy",
+        "id": "bundlepackageleaflet-es-2f37d696067eeb6daf1111cfc3272672",
+        "name": "tegretol",
     },
     {
-        "url": "https://fosps.gravitatehealth.eu/focusing/focus/bundlepackageleaflet-es-4fab126d28f65a1084e7b50a23200363?preprocessors=preprocessing-service-manual&patientIdentifier=alicia-1&lenses=lens-selector-mvp2_pregnancy",
-        "desc": "focusing.xenical.alicia.pregnancy",
+        "id": "bundlepackageleaflet-es-4fab126d28f65a1084e7b50a23200363",
+        "name": "xenical",
     },
     {
-        "url": "https://fosps.gravitatehealth.eu/focusing/focus/bundlepackageleaflet-es-29436a85dac3ea374adb3fa64cfd2578?preprocessors=preprocessing-service-manual&patientIdentifier=alicia-1&lenses=lens-selector-mvp2_pregnancy",
-        "desc": "focusing.hypericum.alicia.pregnancy",
+        "id": "bundlepackageleaflet-es-29436a85dac3ea374adb3fa64cfd2578",
+        "name": "hypericum",
     },
     {
-        "url": "https://fosps.gravitatehealth.eu/focusing/focus/bundlepackageleaflet-es-04c9bd6fb89d38b2d83eced2460c4dc1?preprocessors=preprocessing-service-manual&patientIdentifier=alicia-1&lenses=lens-selector-mvp2_pregnancy",
-        "desc": "focusing.flucelvax.alicia.pregnancy",
+        "id": "bundlepackageleaflet-es-04c9bd6fb89d38b2d83eced2460c4dc1",
+        "name": "flucelvax",
+    },
+    {
+        "id": "bundlepackageleaflet-es-49178f16170ee8a6bc2a4361c1748d5f",
+        "name": "dovato",
+    },
+    {
+        "id": "bundlepackageleaflet-es-e762a2f54b0b24fca4744b1bb7524a5b",
+        "name": "mirtazapine",
+    },
+    {
+        "id": "bundlepackageleaflet-es-da0fc2395ce219262dfd4f0c9a9f72e1",
+        "name": "blaston",
+    },
+    {
+        "id": "bundlepackageleaflet-es-da0fc2395ce219262dfd4f0c9a9f72e1",
+        "name": "blaston",
     },
 ]
 
@@ -68,13 +95,23 @@ def check_website_status(url):
 
 def main():
     while True:
-        for WEBSITE_DATA in WEBSITE_URLS:
-            WEBSITE_URL = WEBSITE_DATA["url"]
-            WEBSITE_DESC = WEBSITE_DATA["desc"]
-            status_code = check_website_status(WEBSITE_URL)
-            if status_code is not None:
-                metric_path = f"gh.{WEBSITE_DESC}"
-                send_to_graphite(metric_path, status_code)
+        for bundleid in BUNDLES:
+            for lens in LENSES:
+                for pid in PATIENT_IDS:
+                    WEBSITE_URL = (
+                        "https://fosps.gravitatehealth.eu/focusing/focus/"
+                        + bundleid["id"]
+                        + "?preprocessors=preprocessing-service-manual&patientIdentifier="
+                        + pid
+                        + "&lenses="
+                        + lens
+                    )
+                    # WEBSITE_URL = WEBSITE_DATA["url"]
+                    #  WEBSITE_DESC = WEBSITE_DATA["desc"]
+                    status_code = check_website_status(WEBSITE_URL)
+                    if status_code is not None:
+                        metric_path = f"""gh.{bundleid["name"]}.{pid}.{lens}"""
+                        send_to_graphite(metric_path, status_code)
         # time.sleep(3600)
         time.sleep(1800)
 

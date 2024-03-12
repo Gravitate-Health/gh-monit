@@ -10,6 +10,8 @@ GRAPHITE_HOST = os.getenv(
 GRAPHITE_PORT = os.getenv(
     "GRAPHITE_PORT", 2003
 )  # Default port for Carbon plaintext protocol
+
+print(GRAPHITE_HOST, GRAPHITE_PORT)
 WEBSITE_URLS = [
     {
         "url": "https://fosps.gravitatehealth.eu/focusing/focus/bundlepackageleaflet-es-94a96e39cfdcd8b378d12dd4063065f9?preprocessors=preprocessing-service-manual&patientIdentifier=alicia-1&lenses=lens-selector-mvp2_pregnancy",

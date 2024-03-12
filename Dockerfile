@@ -11,6 +11,6 @@ COPY main.py .
 
 
 
-RUN ["python",  "main.py"]
+#RUN ["python", "-m", "main.py"]
 
 ENTRYPOINT ["python", "main.py"]

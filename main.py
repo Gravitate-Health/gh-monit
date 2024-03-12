@@ -1,10 +1,15 @@
 import socket
 import time
 import requests
+import os
 
 # Configuration
-GRAPHITE_HOST = "127.0.0.1"  # Replace with your Graphite host
-GRAPHITE_PORT = 2003  # Default port for Carbon plaintext protocol
+GRAPHITE_HOST = os.getenv(
+    "GRAPHITE_HOST", "127.0.0.1"
+)  # "host.docker.internal"  # Replace with your Graphite host
+GRAPHITE_PORT = os.getenv(
+    "GRAPHITE_PORT", 2003
+)  # Default port for Carbon plaintext protocol
 WEBSITE_URLS = [
     {
         "url": "https://fosps.gravitatehealth.eu/focusing/focus/bundlepackageleaflet-es-94a96e39cfdcd8b378d12dd4063065f9?preprocessors=preprocessing-service-manual&patientIdentifier=alicia-1&lenses=lens-selector-mvp2_pregnancy",
@@ -43,7 +48,7 @@ def send_to_graphite(metric_path, value, timestamp=None):
 
     # Open a socket to Graphite and send the data
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
-        sock.connect((GRAPHITE_HOST, GRAPHITE_PORT))
+        sock.connect((GRAPHITE_HOST, int(GRAPHITE_PORT)))
         sock.sendall(message.encode("utf-8"))
 
 
@@ -52,7 +57,7 @@ def check_website_status(url):
     Checks the status code of a website.
     """
     try:
-        response = requests.get(url)
+        response = requests.post(url)
         return response.status_code
     except requests.RequestException as e:
         print(f"Error checking website status: {e}")
@@ -66,10 +71,10 @@ def main():
             WEBSITE_DESC = WEBSITE_DATA["desc"]
             status_code = check_website_status(WEBSITE_URL)
             if status_code is not None:
-                metric_path = f"test.website.status.{WEBSITE_DESC.replace('https://', '').replace('.', '_')}"
+                metric_path = f"gh.{WEBSITE_DESC}"
                 send_to_graphite(metric_path, status_code)
         # time.sleep(3600)
-        time.sleep(5)
+        time.sleep(1800)
 
 
 if __name__ == "__main__":

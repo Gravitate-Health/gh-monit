@@ -110,7 +110,7 @@ def main():
                     #  WEBSITE_DESC = WEBSITE_DATA["desc"]
                     status_code = check_website_status(WEBSITE_URL)
                     if status_code is not None:
-                        metric_path = f"""gh.{bundleid["name"]}.{pid}.{lens}"""
+                        metric_path = f"""gh.focusing.{bundleid["name"]}.{pid}.{lens}"""
                         send_to_graphite(metric_path, status_code)
         # time.sleep(3600)
         time.sleep(1800)

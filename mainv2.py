@@ -345,15 +345,15 @@ def main():
 
         time.sleep(1)
 
-        # chek_all_lenses_data(BUNDLES, PATIENT_IDS, BASE_URL)
+        chek_all_lenses_data(BUNDLES, PATIENT_IDS, BASE_URL)
 
         time.sleep(1)
 
-        # chek_all_preprocess_data(BUNDLES, PATIENT_IDS, BASE_URL)
+        chek_all_preprocess_data(BUNDLES, PATIENT_IDS, BASE_URL)
 
         time.sleep(1)
 
-        # chek_all_prpcessor_with_post_data(BUNDLES, PATIENT_IDS, BASE_URL)
+        chek_all_prpcessor_with_post_data(BUNDLES, PATIENT_IDS, BASE_URL)
 
         time.sleep(1)
         chek_lenses_foralreadypreprocess_data(PREPROCBUNDLES, PATIENT_IDS, BASE_URL)

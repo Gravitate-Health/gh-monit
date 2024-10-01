@@ -13,4 +13,4 @@ COPY mainv2.py .
 
 #RUN ["python", "-m", "main.py"]
 
-ENTRYPOINT ["python", "main.py"]
+ENTRYPOINT ["python", "mainv2.py"]

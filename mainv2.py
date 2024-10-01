@@ -74,9 +74,9 @@ PATIENT_IDS = [
     "Cecilia-1",
     "Pedro-1",
     "helen-1",
-    "maria-1",
+    # "maria-1",
     "0101010101",
-    "ips-1",
+    #  "ips-1",
     "ips-2",
     "ips-3",
     "ips-4",
@@ -328,11 +328,13 @@ def check_website_status(url, body=None):
         focusing_warnings = response.headers.get("gh-focusing-warnings")
         # print(focusing_warnings)
         if response.status_code == 400 or focusing_warnings:
-            #    print(response.text)
+            print(response.text)
             print(focusing_warnings)
 
             return response.status_code, eval(focusing_warnings)
         else:
+            print(response.status_code)
+
             return response.status_code, {}
     except requests.RequestException as e:
         print(f"Error checking website status: {e}")

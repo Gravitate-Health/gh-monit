@@ -1,0 +1,22 @@
+services:
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    restart: always
+    ports:
+      - 3000:3000
+    networks:
+      - grafana-net
+
+
+  graphite:
+    image: graphiteapp/graphite-statsd
+    container_name: graphite
+    restart: always
+    networks:
+      - grafana-net
+    ports:
+      -  2003-2004:2003-2004
+
+networks:
+  grafana-net:

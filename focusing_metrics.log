@@ -411,3 +411,463 @@ gh.preprocessperlens.focusing.calcio-es.Pedro-1.lens-selector-mvp2_intolerance 0
 {}200
 gh.preprocessperlens.focusing.calcio-es.alicia-1.lens-selector-mvp2_pregnancy 0 1727776891
 {}200
+gh.preprocessperlens.focusing.biktarvy-es.alicia-1.lens-selector-mvp2_HIV 2 1727777950
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-es.Cecilia-1.lens-selector-mvp2_HIV 2 1727777951
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-es.Pedro-1.lens-selector-mvp2_HIV 2 1727777953
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-es.alicia-1.lens-selector-mvp2_allergy 2 1727777954
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-es.Cecilia-1.lens-selector-mvp2_allergy 2 1727777955
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-es.Pedro-1.lens-selector-mvp2_allergy 2 1727777956
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-es.alicia-1.lens-selector-mvp2_diabetes 2 1727777957
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-es.Cecilia-1.lens-selector-mvp2_diabetes 2 1727777958
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-es.Pedro-1.lens-selector-mvp2_diabetes 2 1727777959
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-es.alicia-1.lens-selector-mvp2_interaction 2 1727777960
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-es.Cecilia-1.lens-selector-mvp2_interaction 2 1727777961
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-es.Pedro-1.lens-selector-mvp2_interaction 2 1727777962
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-es.alicia-1.lens-selector-mvp2_intolerance 2 1727777963
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-es.Cecilia-1.lens-selector-mvp2_intolerance 2 1727777964
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-es.Pedro-1.lens-selector-mvp2_intolerance 2 1727777965
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-es.alicia-1.lens-selector-mvp2_pregnancy 2 1727777966
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-es.Cecilia-1.lens-selector-mvp2_pregnancy 2 1727777967
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-es.Pedro-1.lens-selector-mvp2_pregnancy 2 1727777968
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-en.alicia-1.lens-selector-mvp2_HIV 0 1727777969
+{}200
+gh.preprocessperlens.focusing.biktarvy-en.Cecilia-1.lens-selector-mvp2_HIV 0 1727777970
+{}200
+gh.preprocessperlens.focusing.biktarvy-en.Pedro-1.lens-selector-mvp2_HIV 0 1727777971
+{}200
+gh.preprocessperlens.focusing.biktarvy-en.alicia-1.lens-selector-mvp2_allergy 0 1727777972
+{}200
+gh.preprocessperlens.focusing.biktarvy-en.Cecilia-1.lens-selector-mvp2_allergy 0 1727777973
+{}200
+gh.preprocessperlens.focusing.biktarvy-en.Pedro-1.lens-selector-mvp2_allergy 0 1727777974
+{}200
+gh.preprocessperlens.focusing.biktarvy-en.alicia-1.lens-selector-mvp2_diabetes 0 1727777975
+{}200
+gh.preprocessperlens.focusing.biktarvy-en.Cecilia-1.lens-selector-mvp2_diabetes 0 1727777976
+{}200
+gh.preprocessperlens.focusing.biktarvy-en.Pedro-1.lens-selector-mvp2_diabetes 0 1727777977
+{}200
+gh.preprocessperlens.focusing.biktarvy-en.alicia-1.lens-selector-mvp2_interaction 0 1727777978
+{}200
+gh.preprocessperlens.focusing.biktarvy-en.Cecilia-1.lens-selector-mvp2_interaction 0 1727777979
+{}200
+gh.preprocessperlens.focusing.biktarvy-en.Pedro-1.lens-selector-mvp2_interaction 0 1727777980
+{}200
+gh.preprocessperlens.focusing.biktarvy-en.alicia-1.lens-selector-mvp2_intolerance 0 1727777981
+{}200
+gh.preprocessperlens.focusing.biktarvy-en.Cecilia-1.lens-selector-mvp2_intolerance 0 1727777982
+{}200
+gh.preprocessperlens.focusing.biktarvy-en.Pedro-1.lens-selector-mvp2_intolerance 0 1727777983
+{}200
+gh.preprocessperlens.focusing.biktarvy-en.alicia-1.lens-selector-mvp2_pregnancy 0 1727777984
+{}200
+gh.preprocessperlens.focusing.biktarvy-en.Cecilia-1.lens-selector-mvp2_pregnancy 0 1727777985
+{}200
+gh.preprocessperlens.focusing.biktarvy-en.Pedro-1.lens-selector-mvp2_pregnancy 0 1727777986
+{}200
+gh.preprocessperlens.focusing.calcio-es.alicia-1.lens-selector-mvp2_HIV 0 1727777987
+{}200
+gh.preprocessperlens.focusing.calcio-es.Cecilia-1.lens-selector-mvp2_HIV 0 1727777988
+{}200
+gh.preprocessperlens.focusing.calcio-es.Pedro-1.lens-selector-mvp2_HIV 0 1727777989
+{}200
+gh.preprocessperlens.focusing.calcio-es.alicia-1.lens-selector-mvp2_allergy 0 1727777990
+{}200
+gh.preprocessperlens.focusing.calcio-es.Cecilia-1.lens-selector-mvp2_allergy 0 1727777991
+{}200
+gh.preprocessperlens.focusing.calcio-es.Pedro-1.lens-selector-mvp2_allergy 0 1727777992
+{}200
+gh.preprocessperlens.focusing.calcio-es.alicia-1.lens-selector-mvp2_diabetes 0 1727777993
+{}200
+gh.preprocessperlens.focusing.calcio-es.Cecilia-1.lens-selector-mvp2_diabetes 0 1727777994
+{}200
+gh.preprocessperlens.focusing.calcio-es.Pedro-1.lens-selector-mvp2_diabetes 0 1727777995
+{}200
+gh.preprocessperlens.focusing.calcio-es.alicia-1.lens-selector-mvp2_interaction 0 1727777996
+{}200
+gh.preprocessperlens.focusing.calcio-es.Cecilia-1.lens-selector-mvp2_interaction 0 1727777997
+{}200
+gh.preprocessperlens.focusing.calcio-es.Pedro-1.lens-selector-mvp2_interaction 0 1727777998
+{}200
+gh.preprocessperlens.focusing.calcio-es.alicia-1.lens-selector-mvp2_intolerance 0 1727777999
+{}200
+gh.preprocessperlens.focusing.calcio-es.Cecilia-1.lens-selector-mvp2_intolerance 0 1727778000
+{}200
+gh.preprocessperlens.focusing.calcio-es.Pedro-1.lens-selector-mvp2_intolerance 0 1727778001
+{}200
+gh.preprocessperlens.focusing.calcio-es.alicia-1.lens-selector-mvp2_pregnancy 0 1727778002
+{}200
+gh.preprocessperlens.focusing.calcio-es.Cecilia-1.lens-selector-mvp2_pregnancy 0 1727778003
+{}200
+gh.preprocessperlens.focusing.calcio-es.Pedro-1.lens-selector-mvp2_pregnancy 0 1727778004
+{}200
+gh.preprocessperlens.focusing.tegretol-es.alicia-1.lens-selector-mvp2_HIV 0 1727778005
+{}200
+gh.preprocessperlens.focusing.tegretol-es.Cecilia-1.lens-selector-mvp2_HIV 0 1727778006
+{}200
+gh.preprocessperlens.focusing.tegretol-es.Pedro-1.lens-selector-mvp2_HIV 0 1727778007
+{}200
+gh.preprocessperlens.focusing.tegretol-es.alicia-1.lens-selector-mvp2_allergy 0 1727778008
+{}200
+gh.preprocessperlens.focusing.tegretol-es.Cecilia-1.lens-selector-mvp2_allergy 0 1727778009
+{}200
+gh.preprocessperlens.focusing.tegretol-es.Pedro-1.lens-selector-mvp2_allergy 0 1727778010
+{}200
+gh.preprocessperlens.focusing.tegretol-es.alicia-1.lens-selector-mvp2_diabetes 0 1727778012
+{}200
+gh.preprocessperlens.focusing.tegretol-es.Cecilia-1.lens-selector-mvp2_diabetes 0 1727778013
+{}200
+gh.preprocessperlens.focusing.tegretol-es.Pedro-1.lens-selector-mvp2_diabetes 0 1727778015
+{}200
+gh.preprocessperlens.focusing.tegretol-es.alicia-1.lens-selector-mvp2_interaction 0 1727778016
+{}200
+gh.preprocessperlens.focusing.tegretol-es.Cecilia-1.lens-selector-mvp2_interaction 0 1727778017
+{}200
+gh.preprocessperlens.focusing.tegretol-es.Pedro-1.lens-selector-mvp2_interaction 0 1727778018
+{}200
+gh.preprocessperlens.focusing.tegretol-es.alicia-1.lens-selector-mvp2_intolerance 0 1727778019
+{}200
+gh.preprocessperlens.focusing.tegretol-es.Cecilia-1.lens-selector-mvp2_intolerance 0 1727778020
+{}200
+gh.preprocessperlens.focusing.tegretol-es.Pedro-1.lens-selector-mvp2_intolerance 0 1727778021
+{}200
+gh.preprocessperlens.focusing.tegretol-es.alicia-1.lens-selector-mvp2_pregnancy 0 1727778022
+{}200
+gh.preprocessperlens.focusing.tegretol-es.Cecilia-1.lens-selector-mvp2_pregnancy 0 1727778023
+{}200
+gh.preprocessperlens.focusing.tegretol-es.Pedro-1.lens-selector-mvp2_pregnancy 0 1727778025
+{}200
+gh.preprocessperlens.focusing.tegretol-en.alicia-1.lens-selector-mvp2_HIV 2 1727778025
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.tegretol-en.Cecilia-1.lens-selector-mvp2_HIV 2 1727778027
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.tegretol-en.Pedro-1.lens-selector-mvp2_HIV 2 1727778028
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.tegretol-en.alicia-1.lens-selector-mvp2_allergy 2 1727778029
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.tegretol-en.Cecilia-1.lens-selector-mvp2_allergy 2 1727778030
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.tegretol-en.Pedro-1.lens-selector-mvp2_allergy 2 1727778030
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.tegretol-en.alicia-1.lens-selector-mvp2_diabetes 2 1727778032
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.tegretol-en.Cecilia-1.lens-selector-mvp2_diabetes 2 1727778033
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.tegretol-en.Pedro-1.lens-selector-mvp2_diabetes 2 1727778034
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.tegretol-en.alicia-1.lens-selector-mvp2_interaction 2 1727778035
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.tegretol-en.Cecilia-1.lens-selector-mvp2_interaction 2 1727778036
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.tegretol-en.Pedro-1.lens-selector-mvp2_interaction 2 1727778037
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.tegretol-en.alicia-1.lens-selector-mvp2_intolerance 2 1727778038
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.tegretol-en.Cecilia-1.lens-selector-mvp2_intolerance 2 1727778039
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.tegretol-en.Pedro-1.lens-selector-mvp2_intolerance 2 1727778040
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.tegretol-en.alicia-1.lens-selector-mvp2_pregnancy 2 1727778040
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.tegretol-en.Cecilia-1.lens-selector-mvp2_pregnancy 2 1727778042
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.tegretol-en.Pedro-1.lens-selector-mvp2_pregnancy 2 1727778043
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.xenical-es.alicia-1.lens-selector-mvp2_HIV 0 1727778043
+{}200
+gh.preprocessperlens.focusing.xenical-es.Cecilia-1.lens-selector-mvp2_HIV 0 1727778044
+{}200
+gh.preprocessperlens.focusing.xenical-es.Pedro-1.lens-selector-mvp2_HIV 0 1727778045
+{}200
+gh.preprocessperlens.focusing.xenical-es.alicia-1.lens-selector-mvp2_allergy 0 1727778046
+{}200
+gh.preprocessperlens.focusing.xenical-es.Cecilia-1.lens-selector-mvp2_allergy 0 1727778047
+{}200
+gh.preprocessperlens.focusing.xenical-es.Pedro-1.lens-selector-mvp2_allergy 0 1727778048
+{}200
+gh.preprocessperlens.focusing.xenical-es.alicia-1.lens-selector-mvp2_diabetes 0 1727778049
+{}200
+gh.preprocessperlens.focusing.xenical-es.Cecilia-1.lens-selector-mvp2_diabetes 0 1727778049
+{}200
+gh.preprocessperlens.focusing.xenical-es.Pedro-1.lens-selector-mvp2_diabetes 0 1727778050
+{}200
+gh.preprocessperlens.focusing.xenical-es.alicia-1.lens-selector-mvp2_interaction 0 1727778052
+{}200
+gh.preprocessperlens.focusing.xenical-es.Cecilia-1.lens-selector-mvp2_interaction 0 1727778053
+{}200
+gh.preprocessperlens.focusing.xenical-es.Pedro-1.lens-selector-mvp2_interaction 0 1727778053
+{}200
+gh.preprocessperlens.focusing.xenical-es.alicia-1.lens-selector-mvp2_intolerance 0 1727778054
+{}200
+gh.preprocessperlens.focusing.xenical-es.Cecilia-1.lens-selector-mvp2_intolerance 0 1727778055
+{}200
+gh.preprocessperlens.focusing.xenical-es.Pedro-1.lens-selector-mvp2_intolerance 0 1727778056
+{}200
+gh.preprocessperlens.focusing.xenical-es.alicia-1.lens-selector-mvp2_pregnancy 0 1727778057
+{}200
+gh.preprocessperlens.focusing.xenical-es.Cecilia-1.lens-selector-mvp2_pregnancy 0 1727778058
+{}200
+gh.preprocessperlens.focusing.xenical-es.Pedro-1.lens-selector-mvp2_pregnancy 0 1727778059
+{}200
+gh.preprocessperlens.focusing.xenical-en.alicia-1.lens-selector-mvp2_HIV 2 1727778060
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.xenical-en.Cecilia-1.lens-selector-mvp2_HIV 2 1727778060
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.xenical-en.Pedro-1.lens-selector-mvp2_HIV 2 1727778062
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.xenical-en.alicia-1.lens-selector-mvp2_allergy 2 1727778063
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.xenical-en.Cecilia-1.lens-selector-mvp2_allergy 2 1727778063
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.xenical-en.Pedro-1.lens-selector-mvp2_allergy 2 1727778064
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.xenical-en.alicia-1.lens-selector-mvp2_diabetes 2 1727778065
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.xenical-en.Cecilia-1.lens-selector-mvp2_diabetes 2 1727778066
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.xenical-en.Pedro-1.lens-selector-mvp2_diabetes 2 1727778067
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.xenical-en.alicia-1.lens-selector-mvp2_interaction 2 1727778068
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.xenical-en.Cecilia-1.lens-selector-mvp2_interaction 2 1727778069
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.xenical-en.Pedro-1.lens-selector-mvp2_interaction 2 1727778070
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.xenical-en.alicia-1.lens-selector-mvp2_intolerance 2 1727778070
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.xenical-en.Cecilia-1.lens-selector-mvp2_intolerance 2 1727778072
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.xenical-en.Pedro-1.lens-selector-mvp2_intolerance 2 1727778072
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.xenical-en.alicia-1.lens-selector-mvp2_pregnancy 2 1727778074
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.xenical-en.Cecilia-1.lens-selector-mvp2_pregnancy 2 1727778075
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.xenical-en.Pedro-1.lens-selector-mvp2_pregnancy 2 1727778076
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.hypericum-es.alicia-1.lens-selector-mvp2_HIV 0 1727778077
+{}200
+gh.preprocessperlens.focusing.hypericum-es.Cecilia-1.lens-selector-mvp2_HIV 0 1727778078
+{}200
+gh.preprocessperlens.focusing.hypericum-es.Pedro-1.lens-selector-mvp2_HIV 0 1727778079
+{}200
+gh.preprocessperlens.focusing.hypericum-es.alicia-1.lens-selector-mvp2_allergy 0 1727778080
+{}200
+gh.preprocessperlens.focusing.hypericum-es.Cecilia-1.lens-selector-mvp2_allergy 0 1727778081
+{}200
+gh.preprocessperlens.focusing.hypericum-es.Pedro-1.lens-selector-mvp2_allergy 0 1727778082
+{}200
+gh.preprocessperlens.focusing.hypericum-es.alicia-1.lens-selector-mvp2_diabetes 0 1727778083
+{}200
+gh.preprocessperlens.focusing.hypericum-es.Cecilia-1.lens-selector-mvp2_diabetes 0 1727778084
+{}200
+gh.preprocessperlens.focusing.hypericum-es.Pedro-1.lens-selector-mvp2_diabetes 0 1727778085
+{}200
+gh.preprocessperlens.focusing.hypericum-es.alicia-1.lens-selector-mvp2_interaction 0 1727778086
+{}200
+gh.preprocessperlens.focusing.hypericum-es.Cecilia-1.lens-selector-mvp2_interaction 0 1727778087
+{}200
+gh.preprocessperlens.focusing.hypericum-es.Pedro-1.lens-selector-mvp2_interaction 0 1727778087
+{}200
+gh.preprocessperlens.focusing.hypericum-es.alicia-1.lens-selector-mvp2_intolerance 0 1727778089
+{}200
+gh.preprocessperlens.focusing.hypericum-es.Cecilia-1.lens-selector-mvp2_intolerance 0 1727778090
+{}200
+gh.preprocessperlens.focusing.hypericum-es.Pedro-1.lens-selector-mvp2_intolerance 0 1727778090
+{}200
+gh.preprocessperlens.focusing.hypericum-es.alicia-1.lens-selector-mvp2_pregnancy 0 1727778092
+{}200
+gh.preprocessperlens.focusing.hypericum-es.Cecilia-1.lens-selector-mvp2_pregnancy 0 1727778093
+{}200
+gh.preprocessperlens.focusing.hypericum-es.Pedro-1.lens-selector-mvp2_pregnancy 0 1727778094
+{}200
+gh.preprocessperlens.focusing.flucelvax-es.alicia-1.lens-selector-mvp2_HIV 0 1727778095
+{}200
+gh.preprocessperlens.focusing.flucelvax-es.Cecilia-1.lens-selector-mvp2_HIV 0 1727778096
+{}200
+gh.preprocessperlens.focusing.flucelvax-es.Pedro-1.lens-selector-mvp2_HIV 0 1727778097
+{}200
+gh.preprocessperlens.focusing.flucelvax-es.alicia-1.lens-selector-mvp2_allergy 0 1727778098
+{}200
+gh.preprocessperlens.focusing.flucelvax-es.Cecilia-1.lens-selector-mvp2_allergy 0 1727778099
+{}200
+gh.preprocessperlens.focusing.flucelvax-es.Pedro-1.lens-selector-mvp2_allergy 0 1727778100
+{}200
+gh.preprocessperlens.focusing.flucelvax-es.alicia-1.lens-selector-mvp2_diabetes 0 1727778101
+{}200
+gh.preprocessperlens.focusing.flucelvax-es.Cecilia-1.lens-selector-mvp2_diabetes 0 1727778102
+{}200
+gh.preprocessperlens.focusing.flucelvax-es.Pedro-1.lens-selector-mvp2_diabetes 0 1727778103
+{}200
+gh.preprocessperlens.focusing.flucelvax-es.alicia-1.lens-selector-mvp2_interaction 0 1727778104
+{}200
+gh.preprocessperlens.focusing.flucelvax-es.Cecilia-1.lens-selector-mvp2_interaction 0 1727778105
+{}200
+gh.preprocessperlens.focusing.flucelvax-es.Pedro-1.lens-selector-mvp2_interaction 0 1727778106
+{}200
+gh.preprocessperlens.focusing.flucelvax-es.alicia-1.lens-selector-mvp2_intolerance 0 1727778107
+{}200
+gh.preprocessperlens.focusing.flucelvax-es.Cecilia-1.lens-selector-mvp2_intolerance 0 1727778107
+{}200
+gh.preprocessperlens.focusing.flucelvax-es.Pedro-1.lens-selector-mvp2_intolerance 0 1727778109
+{}200
+gh.preprocessperlens.focusing.flucelvax-es.alicia-1.lens-selector-mvp2_pregnancy 0 1727778110
+{}200
+gh.preprocessperlens.focusing.flucelvax-es.Cecilia-1.lens-selector-mvp2_pregnancy 0 1727778110
+{}200
+gh.preprocessperlens.focusing.flucelvax-es.Pedro-1.lens-selector-mvp2_pregnancy 0 1727778112
+{}200
+gh.preprocessperlens.focusing.flucelvax-en.alicia-1.lens-selector-mvp2_HIV 0 1727778113
+{}200
+gh.preprocessperlens.focusing.flucelvax-en.Cecilia-1.lens-selector-mvp2_HIV 0 1727778114
+{}200
+gh.preprocessperlens.focusing.flucelvax-en.Pedro-1.lens-selector-mvp2_HIV 0 1727778114
+{}200
+gh.preprocessperlens.focusing.flucelvax-en.alicia-1.lens-selector-mvp2_allergy 0 1727778115
+{}200
+gh.preprocessperlens.focusing.flucelvax-en.Cecilia-1.lens-selector-mvp2_allergy 0 1727778116
+{}200
+gh.preprocessperlens.focusing.flucelvax-en.Pedro-1.lens-selector-mvp2_allergy 0 1727778117
+{}200
+gh.preprocessperlens.focusing.flucelvax-en.alicia-1.lens-selector-mvp2_diabetes 0 1727778118
+{}200
+gh.preprocessperlens.focusing.flucelvax-en.Cecilia-1.lens-selector-mvp2_diabetes 0 1727778119
+{}200
+gh.preprocessperlens.focusing.flucelvax-en.Pedro-1.lens-selector-mvp2_diabetes 0 1727778120
+{}200
+gh.preprocessperlens.focusing.flucelvax-en.alicia-1.lens-selector-mvp2_interaction 0 1727778120
+{}200
+gh.preprocessperlens.focusing.flucelvax-en.Cecilia-1.lens-selector-mvp2_interaction 0 1727778122
+{}200
+gh.preprocessperlens.focusing.flucelvax-en.Pedro-1.lens-selector-mvp2_interaction 0 1727778122
+{}200
+gh.preprocessperlens.focusing.flucelvax-en.alicia-1.lens-selector-mvp2_intolerance 0 1727778123
+{}200
+gh.preprocessperlens.focusing.flucelvax-en.Cecilia-1.lens-selector-mvp2_intolerance 0 1727778124
+{}200
+gh.preprocessperlens.focusing.flucelvax-en.Pedro-1.lens-selector-mvp2_intolerance 0 1727778125
+{}200
+gh.preprocessperlens.focusing.flucelvax-en.alicia-1.lens-selector-mvp2_pregnancy 0 1727778126
+{}200
+gh.preprocessperlens.focusing.flucelvax-en.Cecilia-1.lens-selector-mvp2_pregnancy 0 1727778127
+{}200
+gh.preprocessperlens.focusing.flucelvax-en.Pedro-1.lens-selector-mvp2_pregnancy 0 1727778128
+{}200
+gh.preprocessperlens.focusing.dovato-es.alicia-1.lens-selector-mvp2_HIV 2 1727778129
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-es.Cecilia-1.lens-selector-mvp2_HIV 2 1727778129
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-es.Pedro-1.lens-selector-mvp2_HIV 2 1727778130
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-es.alicia-1.lens-selector-mvp2_allergy 2 1727778131
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-es.Cecilia-1.lens-selector-mvp2_allergy 2 1727778132
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-es.Pedro-1.lens-selector-mvp2_allergy 2 1727778133
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-es.alicia-1.lens-selector-mvp2_diabetes 2 1727778134
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-es.Cecilia-1.lens-selector-mvp2_diabetes 2 1727778135
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-es.Pedro-1.lens-selector-mvp2_diabetes 2 1727778136
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-es.alicia-1.lens-selector-mvp2_interaction 2 1727778137
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-es.Cecilia-1.lens-selector-mvp2_interaction 2 1727778138
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-es.Pedro-1.lens-selector-mvp2_interaction 2 1727778139
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-es.alicia-1.lens-selector-mvp2_intolerance 2 1727778139
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-es.Cecilia-1.lens-selector-mvp2_intolerance 2 1727778140
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-es.Pedro-1.lens-selector-mvp2_intolerance 2 1727778141
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-es.alicia-1.lens-selector-mvp2_pregnancy 2 1727778142
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-es.Cecilia-1.lens-selector-mvp2_pregnancy 2 1727778143
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-es.Pedro-1.lens-selector-mvp2_pregnancy 2 1727778143
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-en.alicia-1.lens-selector-mvp2_HIV 2 1727778144
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-en.Cecilia-1.lens-selector-mvp2_HIV 2 1727778145
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-en.Pedro-1.lens-selector-mvp2_HIV 2 1727778146
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-en.alicia-1.lens-selector-mvp2_allergy 2 1727778147
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-en.Cecilia-1.lens-selector-mvp2_allergy 2 1727778148
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-en.Pedro-1.lens-selector-mvp2_allergy 2 1727778149
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-en.alicia-1.lens-selector-mvp2_diabetes 2 1727778150
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-en.Cecilia-1.lens-selector-mvp2_diabetes 2 1727778151
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-en.Pedro-1.lens-selector-mvp2_diabetes 2 1727778152
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-en.alicia-1.lens-selector-mvp2_interaction 2 1727778153
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-en.Cecilia-1.lens-selector-mvp2_interaction 2 1727778154
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-en.Pedro-1.lens-selector-mvp2_interaction 2 1727778155
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-en.alicia-1.lens-selector-mvp2_intolerance 2 1727778156
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-en.Cecilia-1.lens-selector-mvp2_intolerance 2 1727778157
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-en.Pedro-1.lens-selector-mvp2_intolerance 2 1727778158
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-en.alicia-1.lens-selector-mvp2_pregnancy 2 1727778159
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-en.Cecilia-1.lens-selector-mvp2_pregnancy 2 1727778160
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.dovato-en.Pedro-1.lens-selector-mvp2_pregnancy 2 1727778160
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.mirtazapine-es.alicia-1.lens-selector-mvp2_HIV 2 1727778162
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.mirtazapine-es.Cecilia-1.lens-selector-mvp2_HIV 2 1727778163
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.mirtazapine-es.Pedro-1.lens-selector-mvp2_HIV 2 1727778164
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.mirtazapine-es.alicia-1.lens-selector-mvp2_allergy 2 1727778165
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.mirtazapine-es.Cecilia-1.lens-selector-mvp2_allergy 2 1727778166
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.mirtazapine-es.Pedro-1.lens-selector-mvp2_allergy 2 1727778167
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.mirtazapine-es.alicia-1.lens-selector-mvp2_diabetes 2 1727778168
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.mirtazapine-es.Cecilia-1.lens-selector-mvp2_diabetes 2 1727778169
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.mirtazapine-es.Pedro-1.lens-selector-mvp2_diabetes 2 1727778170
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.mirtazapine-es.alicia-1.lens-selector-mvp2_interaction 2 1727778171
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.mirtazapine-es.Cecilia-1.lens-selector-mvp2_interaction 2 1727778172
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.mirtazapine-es.Pedro-1.lens-selector-mvp2_interaction 2 1727778173
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.mirtazapine-es.alicia-1.lens-selector-mvp2_intolerance 2 1727778174
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.mirtazapine-es.Cecilia-1.lens-selector-mvp2_intolerance 2 1727778175
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200

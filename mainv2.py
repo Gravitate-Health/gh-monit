@@ -69,7 +69,18 @@ def log_result(
 
 
 # print(LENSES)
-PATIENT_IDS = ["alicia-1", "Cecilia-1", "Pedro-1"]
+PATIENT_IDS = [
+    "alicia-1",
+    "Cecilia-1",
+    "Pedro-1",
+    "helen-1",
+    "maria-1",
+    "0101010101",
+    "ips-1",
+    "ips-2",
+    "ips-3",
+    "ips-4",
+]
 BUNDLES = [
     {
         "id": "bundlepackageleaflet-es-94a96e39cfdcd8b378d12dd4063065f9",
@@ -129,6 +140,25 @@ BUNDLES = [
     },
 ]
 
+PREPROCBUNDLES = {
+    "processedbundlekarveabik": "biktarvy-en",
+    "bundleprocessed-es-b44cce291e466626afa836fffe72c350": "biktarvy-es",
+    "bundleprocessed-pt-b44cce291e466626afa836fffe72c350": "biktarvy-pt",
+    "processedbundlekarveacalcium": "calcium_pt",
+    "processedbundledovato-en": "dovato-en",
+    "processedbundledovato-es": "dovato-es",
+    "processedbundleflucelvax": "flucelvax-en",
+    "processedbundleflucelvaxES": "flucelvax-es",
+    "processedbundlehypericum": "hypericum-es",
+    "bundle-ibu-proc": "ibuprofen-en",
+    "Processedbundlekarvea": "karvea-en",
+    "bundle-processed-pt-2d49ae46735143c1323423b7aea24165": "karvea-pt",
+    "bundle-met-proc": "metformin-en",
+    "bundle-novo-proc": "novorapid-en",
+    "bundlepackageleaflet-es-proc-2f37d696067eeb6daf1111cfc3272672": "tegretrol-es",
+    "bundlepackageleaflet-es-proc-4fab126d28f65a1084e7b50a23200363": "xenical-es",
+}
+
 
 def chek_preprocessor_data(BUNDLES, LENSES, PATIENT_IDS, BASE_URL):
     for bundleid in BUNDLES:
@@ -151,6 +181,34 @@ def chek_preprocessor_data(BUNDLES, LENSES, PATIENT_IDS, BASE_URL):
                     status_code=status_code,
                     warnings=warnings,
                     method="preprocessperlens",
+                    bundleid=bundleid,
+                    lens=lens,
+                    pid=pid,
+                )
+    return 1
+
+
+def chek_lenses_foralreadypreprocess_data(BUNDLES, LENSES, PATIENT_IDS, BASE_URL):
+    for bundleid in PREPROCBUNDLES:
+        for lens in LENSES:
+            for pid in PATIENT_IDS:
+                WEBSITE_URL = (
+                    BASE_URL
+                    + "focusing/focus/"
+                    + bundleid["id"]
+                    + "?preprocessors=preprocessing-service-manual&patientIdentifier="
+                    + pid
+                    + "&lenses="
+                    + lens
+                )
+                print(WEBSITE_URL)
+                # WEBSITE_URL = WEBSITE_DATA["url"]
+                #  WEBSITE_DESC = WEBSITE_DATA["desc"]
+                status_code, warnings = check_website_status(WEBSITE_URL)
+                log_result(
+                    status_code=status_code,
+                    warnings=warnings,
+                    method="send-preprocess",
                     bundleid=bundleid,
                     lens=lens,
                     pid=pid,
@@ -287,15 +345,20 @@ def main():
 
         time.sleep(1)
 
-        chek_all_lenses_data(BUNDLES, PATIENT_IDS, BASE_URL)
+        # chek_all_lenses_data(BUNDLES, PATIENT_IDS, BASE_URL)
 
         time.sleep(1)
 
-        chek_all_preprocess_data(BUNDLES, PATIENT_IDS, BASE_URL)
+        # chek_all_preprocess_data(BUNDLES, PATIENT_IDS, BASE_URL)
 
         time.sleep(1)
 
-        chek_all_prpcessor_with_post_data(BUNDLES, PATIENT_IDS, BASE_URL)
+        # chek_all_prpcessor_with_post_data(BUNDLES, PATIENT_IDS, BASE_URL)
+
+        time.sleep(1)
+        chek_lenses_foralreadypreprocess_data(PREPROCBUNDLES, PATIENT_IDS, BASE_URL)
+
+        time.sleep(3600)
 
 
 if __name__ == "__main__":

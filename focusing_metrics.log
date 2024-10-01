@@ -1019,3 +1019,51 @@ gh.preprocessperlens.focusing.biktarvy-en.ips-2.lens-selector-mvp2_HIV 0 1727779
 {}200
 gh.preprocessperlens.focusing.biktarvy-en.ips-3.lens-selector-mvp2_HIV 1 1727779940
 {}500
+gh.preprocessperlens.focusing.biktarvy-es.alicia-1.lens-selector-mvp2_HIV 2 1727780093
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-es.Cecilia-1.lens-selector-mvp2_HIV 2 1727780095
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-es.Pedro-1.lens-selector-mvp2_HIV 2 1727780096
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-es.helen-1.lens-selector-mvp2_HIV 2 1727780097
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-es.alicia-1.lens-selector-mvp2_HIV 2 1727780155
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-es.Cecilia-1.lens-selector-mvp2_HIV 2 1727780156
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-es.Pedro-1.lens-selector-mvp2_HIV 2 1727780157
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-es.helen-1.lens-selector-mvp2_HIV 2 1727780158
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-es.maria-1.lens-selector-mvp2_HIV 1 1727780158
+{}400
+gh.preprocessperlens.focusing.biktarvy-es.0101010101.lens-selector-mvp2_HIV 1 1727780160
+{}500
+gh.preprocessperlens.focusing.biktarvy-es.ips-1.lens-selector-mvp2_HIV 1 1727780160
+{}400
+gh.preprocessperlens.focusing.biktarvy-es.ips-2.lens-selector-mvp2_HIV 2 1727780162
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-es.ips-3.lens-selector-mvp2_HIV 1 1727780162
+{}500
+gh.preprocessperlens.focusing.biktarvy-es.ips-4.lens-selector-mvp2_HIV 1 1727780163
+{}500
+gh.preprocessperlens.focusing.biktarvy-es.alicia-1.lens-selector-mvp2_allergy 2 1727780164
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-es.Cecilia-1.lens-selector-mvp2_allergy 2 1727780165
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-es.Pedro-1.lens-selector-mvp2_allergy 2 1727780166
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-es.helen-1.lens-selector-mvp2_allergy 2 1727780167
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-es.maria-1.lens-selector-mvp2_allergy 1 1727780167
+{}400
+gh.preprocessperlens.focusing.biktarvy-es.0101010101.lens-selector-mvp2_allergy 1 1727780168
+{}500
+gh.preprocessperlens.focusing.biktarvy-es.ips-1.lens-selector-mvp2_allergy 1 1727780168
+{}400
+gh.preprocessperlens.focusing.biktarvy-es.ips-2.lens-selector-mvp2_allergy 2 1727780169
+{'preprocessingWarnings': [{'serviceName': 'preprocessing-service-manual', 'error': 'Preprocessed version of ePI could not be handled by preprocessor.'}], 'lensesWarnings': []}200
+gh.preprocessperlens.focusing.biktarvy-es.ips-3.lens-selector-mvp2_allergy 1 1727780170
+{}500
+gh.preprocessperlens.focusing.biktarvy-es.ips-4.lens-selector-mvp2_allergy 1 1727780170
+{}500

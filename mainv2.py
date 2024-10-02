@@ -3,8 +3,31 @@ import time
 import requests
 import os
 import json
+import logging
+from logging.handlers import RotatingFileHandler
 
-# Configuration
+# Define the directory and ensure it exists
+log_directory = "logs"
+if not os.path.exists(log_directory):
+    os.makedirs(log_directory)
+# Set up the logger
+logger = logging.getLogger("my_logger")
+logger.setLevel(logging.DEBUG)  # Configuration
+
+
+# Configure the rotating file handler
+log_file = os.path.join(log_directory, "gh-monit.log")
+
+handler = RotatingFileHandler(log_file, maxBytes=2000, backupCount=5)
+handler.setLevel(logging.DEBUG)
+# Create a formatter and set it for the handler
+formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+handler.setFormatter(formatter)
+
+# Add the handler to the logger
+logger.addHandler(handler)
+
+
 GRAPHITE_HOST = os.getenv(
     "GRAPHITE_HOST", "127.0.0.1"
 )  # "host.docker.internal"  # Replace with your Graphite host
@@ -13,7 +36,8 @@ GRAPHITE_PORT = os.getenv(
 )  # Default port for Carbon plaintext protocol
 
 BASE_URL = os.getenv("BASE_URL", "https://gravitate-health.lst.tfo.upm.es/")
-print(GRAPHITE_HOST, GRAPHITE_PORT)
+# print(GRAPHITE_HOST, GRAPHITE_PORT)
+logger.debug(GRAPHITE_HOST, GRAPHITE_PORT)
 
 LENSES = [
     "lens-selector-mvp2_HIV",
@@ -31,7 +55,7 @@ def log_result(
     status_code,
     warnings,
     method,
-    logger_method=["graphite", "file"],
+    logger_method=["graphite"],
     timestamp=None,
     bundleid=None,
     lens=None,
@@ -46,26 +70,38 @@ def log_result(
         value = 0
     elif status_code != 200:
         value = 1
+        logger.debug(
+            f"Value 1 for {status_code} and method {method} and bundle {bundleid} and pid {pid}"
+        )
+
     elif status_code == 200 and warnings["preprocessingWarnings"]:
         # print(warnings)
         # print(warnings["preprocessingWarnings"])
         value = 2
+        logger.debug(
+            f"Value 2 for {status_code} and {warnings} and method {method} and bundle {bundleid} and pid {pid}"
+        )
+
     elif status_code == 200 and len(warnings["lensesWarnings"]) > 0:
         value = 3
+        logger.debug(
+            f"Value 3 for {status_code} and {warnings} and method {method} and bundle {bundleid} and pid {pid}"
+        )
+
     else:
         value = 4
-        print(status_code, warnings)
+        logger.debug(
+            f"Value 4 for {status_code} and {warnings} and method {method} and bundle {bundleid} and pid {pid}"
+        )
+
     message = f"{metric_path} {value} {timestamp}\n"
-    print(f"Sending to Graphite: {message}", end="")
+    # print(f"Sending to Graphite: {message}", end="")
+
     if "graphite" in logger_method:
         # Open a socket to Graphite and send the data
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
             sock.connect((GRAPHITE_HOST, int(GRAPHITE_PORT)))
             sock.sendall(message.encode("utf-8"))
-    if "file" in logger_method:
-        # print(f"Logging to file: {message}")
-        with open("focusing_metrics.log", "a") as f:
-            f.write(message + str(warnings) + str(status_code) + "\n")
 
 
 # print(LENSES)
@@ -323,13 +359,14 @@ def check_website_status(url, body=None):
                     "Accept": "application/json",
                 },
             )
-        print(response.status_code)
+        # print(response.status_code)
         # print(response.json())
         focusing_warnings = response.headers.get("gh-focusing-warnings")
-        print(focusing_warnings)
-        print(response.text)
+        # print(focusing_warnings)
+        # print(response.text)
 
         if response.status_code == 400:
+            logger.debug(f"Warning: {response.status_code} and {response.text}")
             return response.status_code, {}
 
         elif focusing_warnings:
@@ -347,22 +384,33 @@ def check_website_status(url, body=None):
 
 def main():
     while True:
-        chek_preprocessor_data(BUNDLES, LENSES, PATIENT_IDS, BASE_URL)
+        try:
+            chek_preprocessor_data(BUNDLES, LENSES, PATIENT_IDS, BASE_URL)
+        except:
+            logger.debug(f"Error on function chek_preprocessor_data")
+        time.sleep(1)
+        try:
+            chek_all_lenses_data(BUNDLES, PATIENT_IDS, BASE_URL)
+        except:
+            logger.debug(f"Error on function chek_all_lenses_data")
 
         time.sleep(1)
-
-        chek_all_lenses_data(BUNDLES, PATIENT_IDS, BASE_URL)
-
-        time.sleep(1)
-
-        chek_all_preprocess_data(BUNDLES, PATIENT_IDS, BASE_URL)
+        try:
+            chek_all_preprocess_data(BUNDLES, PATIENT_IDS, BASE_URL)
+        except:
+            logger.debug(f"Error on function chek_all_preprocess_data")
 
         time.sleep(1)
-
-        chek_all_prpcessor_with_post_data(BUNDLES, PATIENT_IDS, BASE_URL)
+        try:
+            chek_all_prpcessor_with_post_data(BUNDLES, PATIENT_IDS, BASE_URL)
+        except:
+            logger.debug(f"Error on function chek_all_prpcessor_with_post_data")
 
         time.sleep(1)
-        chek_lenses_foralreadypreprocess_data(PREPROCBUNDLES, PATIENT_IDS, BASE_URL)
+        try:
+            chek_lenses_foralreadypreprocess_data(PREPROCBUNDLES, PATIENT_IDS, BASE_URL)
+        except:
+            logger.debug(f"Error on function chek_lenses_foralreadypreprocess_data")
 
         time.sleep(3600)
 

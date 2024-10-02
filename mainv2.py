@@ -412,7 +412,9 @@ def main():
 
         time.sleep(1)
         try:
-            chek_lenses_foralreadypreprocess_data(PREPROCBUNDLES, PATIENT_IDS, BASE_URL)
+            chek_lenses_foralreadypreprocess_data(
+                PREPROCBUNDLES, LENSES, PATIENT_IDS, BASE_URL
+            )
         except Exception as err:
             logger.debug(
                 f"Error on function chek_lenses_foralreadypreprocess_data -> {err}"

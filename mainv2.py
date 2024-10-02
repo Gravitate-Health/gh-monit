@@ -37,7 +37,9 @@ GRAPHITE_PORT = os.getenv(
 
 BASE_URL = os.getenv("BASE_URL", "https://gravitate-health.lst.tfo.upm.es/")
 # print(GRAPHITE_HOST, GRAPHITE_PORT)
-logger.debug(GRAPHITE_HOST, GRAPHITE_PORT)
+logger.debug(
+    f"BASEURL is {BASE_URL} and HOST IS {GRAPHITE_HOST} and port is  {GRAPHITE_PORT}"
+)
 
 LENSES = [
     "lens-selector-mvp2_HIV",

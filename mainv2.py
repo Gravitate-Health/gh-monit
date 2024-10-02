@@ -18,7 +18,7 @@ logger.setLevel(logging.DEBUG)  # Configuration
 # Configure the rotating file handler
 log_file = os.path.join(log_directory, "gh-monit.log")
 
-handler = RotatingFileHandler(log_file, maxBytes=2000, backupCount=5)
+handler = RotatingFileHandler(log_file, maxBytes=10 * 1024 * 1024, backupCount=10)
 handler.setLevel(logging.DEBUG)
 # Create a formatter and set it for the handler
 formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")

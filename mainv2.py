@@ -388,31 +388,35 @@ def main():
     while True:
         try:
             chek_preprocessor_data(BUNDLES, LENSES, PATIENT_IDS, BASE_URL)
-        except:
-            logger.debug(f"Error on function chek_preprocessor_data")
+        except Exception as err:
+            logger.debug(f"Error on function chek_preprocessor_data -> {err}")
         time.sleep(1)
         try:
             chek_all_lenses_data(BUNDLES, PATIENT_IDS, BASE_URL)
-        except:
-            logger.debug(f"Error on function chek_all_lenses_data")
+        except Exception as err:
+            logger.debug(f"Error on function chek_all_lenses_data -> {err}")
 
         time.sleep(1)
         try:
             chek_all_preprocess_data(BUNDLES, PATIENT_IDS, BASE_URL)
-        except:
-            logger.debug(f"Error on function chek_all_preprocess_data")
+        except Exception as err:
+            logger.debug(f"Error on function chek_all_preprocess_data -> {err}")
 
         time.sleep(1)
         try:
             chek_all_prpcessor_with_post_data(BUNDLES, PATIENT_IDS, BASE_URL)
-        except:
-            logger.debug(f"Error on function chek_all_prpcessor_with_post_data")
+        except Exception as err:
+            logger.debug(
+                f"Error on function chek_all_prpcessor_with_post_data -> {err}"
+            )
 
         time.sleep(1)
         try:
             chek_lenses_foralreadypreprocess_data(PREPROCBUNDLES, PATIENT_IDS, BASE_URL)
-        except:
-            logger.debug(f"Error on function chek_lenses_foralreadypreprocess_data")
+        except Exception as err:
+            logger.debug(
+                f"Error on function chek_lenses_foralreadypreprocess_data -> {err}"
+            )
 
         time.sleep(3600)
 

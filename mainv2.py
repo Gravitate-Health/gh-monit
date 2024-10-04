@@ -223,7 +223,7 @@ def chek_preprocessor_data(BUNDLES, LENSES, PATIENT_IDS, BASE_URL):
                     lens=lens,
                     pid=pid,
                 )
-                time.sleep(2)
+                time.sleep(1)
     return 1
 
 
@@ -252,7 +252,7 @@ def chek_lenses_foralreadypreprocess_data(BUNDLES, LENSES, PATIENT_IDS, BASE_URL
                     lens=lens,
                     pid=pid,
                 )
-                time.sleep(2)
+                time.sleep(1)
 
     return 1
 
@@ -279,7 +279,7 @@ def chek_all_lenses_data(BUNDLES, PATIENT_IDS, BASE_URL):
                 lens="all",
                 pid=pid,
             )
-            time.sleep(2)
+            time.sleep(1)
 
     return 1
 
@@ -306,7 +306,7 @@ def chek_all_preprocess_data(BUNDLES, PATIENT_IDS, BASE_URL):
                 lens="all",
                 pid=pid,
             )
-            time.sleep(2)
+            time.sleep(1)
 
     return 1
 
@@ -343,7 +343,7 @@ def chek_all_prpcessor_with_post_data(BUNDLES, PATIENT_IDS, BASE_URL):
                 lens="all",
                 pid=pid,
             )
-            time.sleep(2)
+            time.sleep(1)
 
     return 1
 

@@ -223,6 +223,7 @@ def chek_preprocessor_data(BUNDLES, LENSES, PATIENT_IDS, BASE_URL):
                     lens=lens,
                     pid=pid,
                 )
+                time.sleep(2)
     return 1
 
 
@@ -251,6 +252,8 @@ def chek_lenses_foralreadypreprocess_data(BUNDLES, LENSES, PATIENT_IDS, BASE_URL
                     lens=lens,
                     pid=pid,
                 )
+                time.sleep(2)
+
     return 1
 
 
@@ -276,6 +279,8 @@ def chek_all_lenses_data(BUNDLES, PATIENT_IDS, BASE_URL):
                 lens="all",
                 pid=pid,
             )
+            time.sleep(2)
+
     return 1
 
 
@@ -301,6 +306,8 @@ def chek_all_preprocess_data(BUNDLES, PATIENT_IDS, BASE_URL):
                 lens="all",
                 pid=pid,
             )
+            time.sleep(2)
+
     return 1
 
 
@@ -336,6 +343,8 @@ def chek_all_prpcessor_with_post_data(BUNDLES, PATIENT_IDS, BASE_URL):
                 lens="all",
                 pid=pid,
             )
+            time.sleep(2)
+
     return 1
 
 
@@ -390,19 +399,19 @@ def main():
             chek_preprocessor_data(BUNDLES, LENSES, PATIENT_IDS, BASE_URL)
         except Exception as err:
             logger.debug(f"Error on function chek_preprocessor_data -> {err}")
-        time.sleep(1)
+        time.sleep(10)
         try:
             chek_all_lenses_data(BUNDLES, PATIENT_IDS, BASE_URL)
         except Exception as err:
             logger.debug(f"Error on function chek_all_lenses_data -> {err}")
 
-        time.sleep(1)
+        time.sleep(10)
         try:
             chek_all_preprocess_data(BUNDLES, PATIENT_IDS, BASE_URL)
         except Exception as err:
             logger.debug(f"Error on function chek_all_preprocess_data -> {err}")
 
-        time.sleep(1)
+        time.sleep(10)
         try:
             chek_all_prpcessor_with_post_data(BUNDLES, PATIENT_IDS, BASE_URL)
         except Exception as err:
@@ -410,7 +419,7 @@ def main():
                 f"Error on function chek_all_prpcessor_with_post_data -> {err}"
             )
 
-        time.sleep(1)
+        time.sleep(10)
         try:
             chek_lenses_foralreadypreprocess_data(
                 PREPROCBUNDLES, LENSES, PATIENT_IDS, BASE_URL

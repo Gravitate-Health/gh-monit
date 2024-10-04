@@ -178,24 +178,72 @@ BUNDLES = [
     },
 ]
 
-PREPROCBUNDLES = {
-    "processedbundlekarveabik": "biktarvy-en",
-    "bundleprocessed-es-b44cce291e466626afa836fffe72c350": "biktarvy-es",
-    "bundleprocessed-pt-b44cce291e466626afa836fffe72c350": "biktarvy-pt",
-    "processedbundlekarveacalcium": "calcium_pt",
-    "processedbundledovato-en": "dovato-en",
-    "processedbundledovato-es": "dovato-es",
-    "processedbundleflucelvax": "flucelvax-en",
-    "processedbundleflucelvaxES": "flucelvax-es",
-    "processedbundlehypericum": "hypericum-es",
-    "bundle-ibu-proc": "ibuprofen-en",
-    "Processedbundlekarvea": "karvea-en",
-    "bundle-processed-pt-2d49ae46735143c1323423b7aea24165": "karvea-pt",
-    "bundle-met-proc": "metformin-en",
-    "bundle-novo-proc": "novorapid-en",
-    "bundlepackageleaflet-es-proc-2f37d696067eeb6daf1111cfc3272672": "tegretrol-es",
-    "bundlepackageleaflet-es-proc-4fab126d28f65a1084e7b50a23200363": "xenical-es",
-}
+PREPROCBUNDLES = [
+    {
+        "id": "processedbundlekarveabik",
+        "name": "biktarvy-en",
+    },
+    {
+        "id": "bundleprocessed-es-b44cce291e466626afa836fffe72c350",
+        "name": "biktarvy-es",
+    },
+    {
+        "id": "bundleprocessed-pt-b44cce291e466626afa836fffe72c350",
+        "name": "biktarvy-pt",
+    },
+    {
+        "id": "processedbundlekarveacalcium",
+        "name": "calcium_pt",
+    },
+    {
+        "id": "processedbundledovato-en",
+        "name": "dovato-en",
+    },
+    {
+        "id": "processedbundledovato-es",
+        "name": "dovato-es",
+    },
+    {
+        "id": "processedbundleflucelvax",
+        "name": "flucelvax-en",
+    },
+    {
+        "id": "processedbundleflucelvaxES",
+        "name": "flucelvax-es",
+    },
+    {
+        "id": "processedbundlehypericum",
+        "name": "hypericum-es",
+    },
+    {
+        "id": "bundle-ibu-proc",
+        "name": "ibuprofen-en",
+    },
+    {
+        "id": "Processedbundlekarvea",
+        "name": "karvea-en",
+    },
+    {
+        "id": "bundle-processed-pt-2d49ae46735143c1323423b7aea24165",
+        "name": "karvea-pt",
+    },
+    {
+        "id": "bundle-met-proc",
+        "name": "metformin-en",
+    },
+    {
+        "id": "bundle-novo-proc",
+        "name": "novorapid-en",
+    },
+    {
+        "id": "bundlepackageleaflet-es-proc-2f37d696067eeb6daf1111cfc3272672",
+        "name": "tegretrol-es",
+    },
+    {
+        "id": "bundlepackageleaflet-es-proc-4fab126d28f65a1084e7b50a23200363",
+        "name": "xenical-es",
+    },
+]
 
 
 def chek_preprocessor_data(BUNDLES, LENSES, PATIENT_IDS, BASE_URL):
@@ -311,18 +359,44 @@ def chek_all_preprocess_data(BUNDLES, PATIENT_IDS, BASE_URL):
     return 1
 
 
+def check_bundles_in_list(BASE_URL):
+    WEBSITE_URL = BASE_URL + "/Bundle"
+    print(WEBSITE_URL)
+    response = requests.post(WEBSITE_URL)
+    for entry in response.json()["entry"]:
+        bid = entry["resource"]["id"]
+        nresponse = requests.post(BASE_URL + "/List?item=" + bid)
+        if nresponse.json()["total"] > 0:
+            value = 0
+        else:
+            value = 1
+
+        metric_path = f"gh.listmember.{bid}"
+        timestamp = int(time.time())
+
+        message = f"{metric_path} {value} {timestamp}\n"
+        # print(f"Sending to Graphite: {message}", end="")
+
+        # Open a socket to Graphite and send the data
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+            sock.connect((GRAPHITE_HOST, int(GRAPHITE_PORT)))
+            sock.sendall(message.encode("utf-8"))
+    return 1
+
+
 def chek_all_prpcessor_with_post_data(BUNDLES, PATIENT_IDS, BASE_URL):
     for bundleid in BUNDLES:
-        bundleresp = requests.get(
-            "https://gravitate-health.lst.tfo.upm.es/epi/api/fhir/Bundle/"
-            + bundleid["id"]
-        )
+        bundleresp = requests.get(BASE_URL + "/Bundle/" + bundleid["id"])
         bundle = bundleresp.json()
         for pid in PATIENT_IDS:
-            patresp = requests.get(
-                "https://gravitate-health.lst.tfo.upm.es/ips/api/fhir/Patient/$summary?identifier="
-                + pid
-            )
+            patresp_body = {
+                "resourceType": "Parameters",
+                "id": "example",
+                "parameter": [
+                    {"name": "identifier", "valueIdentifier": {"value": pid}}
+                ],
+            }
+            patresp = requests.post(BASE_URL + "/Patient/$summary", body=patresp_body)
             ips = patresp.json()
             #  print(ips)
             body = {"epi": bundle, "ips": ips}

@@ -66,7 +66,7 @@ def log_result(
     """
     Sends a metric to Graphite.
     """
-    metric_path = f"""gh.{method}.focusing.{bundleid["name"]}.{pid}.{lens}"""
+    metric_path = f"""gh.focusing.{method}.{bundleid["name"]}.{pid}.{lens}"""
     timestamp = timestamp or int(time.time())
     if status_code == 200 and not warnings:
         value = 0

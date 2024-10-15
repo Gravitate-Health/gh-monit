@@ -360,27 +360,79 @@ def chek_all_preprocess_data(BUNDLES, PATIENT_IDS, BASE_URL):
 
 
 def check_bundles_in_list(BASE_URL):
-    WEBSITE_URL = BASE_URL + "/Bundle"
+    ENCHACED_WHITE_LIST = [
+        "enhanced-bundlebik-alicia",
+        "enhanced-bundlekarveacalcium-alicia",
+        "enchanced-bundledovato-es",
+        "enchanced-bundledovato-en",
+        "enhanced-bundleflucelvax-alicia",
+        "enhanced-bundlehypericum-alicia",
+        "enhancedbundlekarvea-alicia",
+        "enhancedddbundlekarvea",
+        "enhanced-bundlebik-pedro",
+        "enhanced-bundlekarveacalcium-pedro",
+        "enchanced-bundledovato-pedro-en",
+        "enchanced-bundledovato-pedro-es",
+        "enhanced-bundleflucelvax-pedro",
+        "enhanced-bundlehypericum-pedro",
+        "enhancedbundlekarveaP",
+    ]
+    WEBSITE_URL = BASE_URL + "epi/api/fhir/Bundle"
     print(WEBSITE_URL)
-    response = requests.post(WEBSITE_URL)
-    for entry in response.json()["entry"]:
-        bid = entry["resource"]["id"]
-        nresponse = requests.post(BASE_URL + "/List?item=" + bid)
-        if nresponse.json()["total"] > 0:
-            value = 0
-        else:
-            value = 1
 
-        metric_path = f"gh.listmember.{bid}"
-        timestamp = int(time.time())
+    next_url = WEBSITE_URL  # Start with the initial URL
 
-        message = f"{metric_path} {value} {timestamp}\n"
-        # print(f"Sending to Graphite: {message}", end="")
+    while next_url:  # Loop through bundles while 'next' link exists
+        response = requests.get(next_url)
 
-        # Open a socket to Graphite and send the data
-        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
-            sock.connect((GRAPHITE_HOST, int(GRAPHITE_PORT)))
-            sock.sendall(message.encode("utf-8"))
+        if response.status_code != 200:
+            print(f"Failed to fetch data: {response.status_code}")
+            break
+
+        # Parse the JSON response
+        data = response.json()
+
+        # Process entries in the current bundle
+        if "entry" in data:
+            for entry in data["entry"]:
+                bid = entry["resource"]["id"]
+                if bid in ENCHACED_WHITE_LIST:
+                    continue
+                print(f"Processing bundle ID: {bid}")
+
+                # Check the 'List' resource for the current bundle ID
+                nresponse = requests.get(f"{BASE_URL}epi/api/fhir/List?item={bid}")
+
+                if nresponse.status_code != 200:
+                    print(f"Failed to check List resource: {nresponse.status_code}")
+                    continue
+
+                if nresponse.json().get("total", 0) > 0:
+                    value = 0  # If the resource is found
+                else:
+                    value = 1  # If the resource is not found
+
+                metric_path = f"gh.listmember.{bid}"
+                timestamp = int(time.time())
+
+                message = f"{metric_path} {value} {timestamp}\n"
+                # print(f"Sending to Graphite: {message}", end="")
+                print(message)
+
+                # Open a socket to Graphite and send the data
+                # Uncomment and modify if sending to Graphite
+                # with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+                #     sock.connect((GRAPHITE_HOST, int(GRAPHITE_PORT)))
+                #     sock.sendall(message.encode("utf-8"))
+
+        # Check for the next link to paginate
+        next_url = None
+        for link in data.get("link", []):
+            if link["relation"] == "next":
+                next_url = link["url"]
+                print(f"Fetching next page: {next_url}")
+                break  # We only need the first 'next' link
+    print("end")
     return 1
 
 
@@ -469,39 +521,45 @@ def check_website_status(url, body=None):
 
 def main():
     while True:
-        try:
-            chek_preprocessor_data(BUNDLES, LENSES, PATIENT_IDS, BASE_URL)
-        except Exception as err:
-            logger.debug(f"Error on function chek_preprocessor_data -> {err}")
-        time.sleep(10)
-        try:
-            chek_all_lenses_data(BUNDLES, PATIENT_IDS, BASE_URL)
-        except Exception as err:
-            logger.debug(f"Error on function chek_all_lenses_data -> {err}")
+        # try:
+        #     chek_preprocessor_data(BUNDLES, LENSES, PATIENT_IDS, BASE_URL)
+        # except Exception as err:
+        #     logger.debug(f"Error on function chek_preprocessor_data -> {err}")
+        # time.sleep(10)
+        # try:
+        #     chek_all_lenses_data(BUNDLES, PATIENT_IDS, BASE_URL)
+        # except Exception as err:
+        #     logger.debug(f"Error on function chek_all_lenses_data -> {err}")
+
+        # time.sleep(10)
+        # try:
+        #     chek_all_preprocess_data(BUNDLES, PATIENT_IDS, BASE_URL)
+        # except Exception as err:
+        #     logger.debug(f"Error on function chek_all_preprocess_data -> {err}")
+
+        # time.sleep(10)
+        # try:
+        #     chek_all_prpcessor_with_post_data(BUNDLES, PATIENT_IDS, BASE_URL)
+        # except Exception as err:
+        #     logger.debug(
+        #         f"Error on function chek_all_prpcessor_with_post_data -> {err}"
+        #     )
+
+        # time.sleep(10)
+        # try:
+        #     chek_lenses_foralreadypreprocess_data(
+        #         PREPROCBUNDLES, LENSES, PATIENT_IDS, BASE_URL
+        #     )
+        # except Exception as err:
+        #     logger.debug(
+        #         f"Error on function chek_lenses_foralreadypreprocess_data -> {err}"
+        #     )
 
         time.sleep(10)
         try:
-            chek_all_preprocess_data(BUNDLES, PATIENT_IDS, BASE_URL)
+            check_bundles_in_list(BASE_URL)
         except Exception as err:
-            logger.debug(f"Error on function chek_all_preprocess_data -> {err}")
-
-        time.sleep(10)
-        try:
-            chek_all_prpcessor_with_post_data(BUNDLES, PATIENT_IDS, BASE_URL)
-        except Exception as err:
-            logger.debug(
-                f"Error on function chek_all_prpcessor_with_post_data -> {err}"
-            )
-
-        time.sleep(10)
-        try:
-            chek_lenses_foralreadypreprocess_data(
-                PREPROCBUNDLES, LENSES, PATIENT_IDS, BASE_URL
-            )
-        except Exception as err:
-            logger.debug(
-                f"Error on function chek_lenses_foralreadypreprocess_data -> {err}"
-            )
+            logger.debug(f"Error on function check_bundles_in_list -> {err}")
 
         time.sleep(3600)
 

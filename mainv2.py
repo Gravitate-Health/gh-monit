@@ -1,10 +1,11 @@
-import socket
-import time
-import requests
-import os
 import json
 import logging
+import os
+import socket
+import time
 from logging.handlers import RotatingFileHandler
+
+import requests
 
 # Define the directory and ensure it exists
 log_directory = "logs"
@@ -521,39 +522,39 @@ def check_website_status(url, body=None):
 
 def main():
     while True:
-        # try:
-        #     chek_preprocessor_data(BUNDLES, LENSES, PATIENT_IDS, BASE_URL)
-        # except Exception as err:
-        #     logger.debug(f"Error on function chek_preprocessor_data -> {err}")
-        # time.sleep(10)
-        # try:
-        #     chek_all_lenses_data(BUNDLES, PATIENT_IDS, BASE_URL)
-        # except Exception as err:
-        #     logger.debug(f"Error on function chek_all_lenses_data -> {err}")
+        try:
+            chek_preprocessor_data(BUNDLES, LENSES, PATIENT_IDS, BASE_URL)
+        except Exception as err:
+            logger.debug(f"Error on function chek_preprocessor_data -> {err}")
+        time.sleep(10)
+        try:
+            chek_all_lenses_data(BUNDLES, PATIENT_IDS, BASE_URL)
+        except Exception as err:
+            logger.debug(f"Error on function chek_all_lenses_data -> {err}")
 
-        # time.sleep(10)
-        # try:
-        #     chek_all_preprocess_data(BUNDLES, PATIENT_IDS, BASE_URL)
-        # except Exception as err:
-        #     logger.debug(f"Error on function chek_all_preprocess_data -> {err}")
+        time.sleep(10)
+        try:
+            chek_all_preprocess_data(BUNDLES, PATIENT_IDS, BASE_URL)
+        except Exception as err:
+            logger.debug(f"Error on function chek_all_preprocess_data -> {err}")
 
-        # time.sleep(10)
-        # try:
-        #     chek_all_prpcessor_with_post_data(BUNDLES, PATIENT_IDS, BASE_URL)
-        # except Exception as err:
-        #     logger.debug(
-        #         f"Error on function chek_all_prpcessor_with_post_data -> {err}"
-        #     )
+        time.sleep(10)
+        try:
+            chek_all_prpcessor_with_post_data(BUNDLES, PATIENT_IDS, BASE_URL)
+        except Exception as err:
+            logger.debug(
+                f"Error on function chek_all_prpcessor_with_post_data -> {err}"
+            )
 
-        # time.sleep(10)
-        # try:
-        #     chek_lenses_foralreadypreprocess_data(
-        #         PREPROCBUNDLES, LENSES, PATIENT_IDS, BASE_URL
-        #     )
-        # except Exception as err:
-        #     logger.debug(
-        #         f"Error on function chek_lenses_foralreadypreprocess_data -> {err}"
-        #     )
+        time.sleep(10)
+        try:
+            chek_lenses_foralreadypreprocess_data(
+                PREPROCBUNDLES, LENSES, PATIENT_IDS, BASE_URL
+            )
+        except Exception as err:
+            logger.debug(
+                f"Error on function chek_lenses_foralreadypreprocess_data -> {err}"
+            )
 
         time.sleep(10)
         try:

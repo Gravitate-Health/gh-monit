@@ -5,10 +5,8 @@ RUN mkdir /app
 WORKDIR /app
 
 RUN pip install --upgrade pip
-RUN pip install requests
 
-COPY mainv2.py .
+COPY . .
+RUN pip install -r requirements.txt
 
-
-
-ENTRYPOINT ["python", "mainv2.py"]
+ENTRYPOINT ["python", "main.py"]

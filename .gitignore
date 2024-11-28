@@ -5,3 +5,5 @@ focusing_metrics.log
 logs/
 
 data.json
+
+venv/

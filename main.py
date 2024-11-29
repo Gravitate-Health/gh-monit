@@ -6,13 +6,24 @@ import threading
 import time
 from logging.handlers import RotatingFileHandler
 
-from flask import Flask, Response
 from requests_futures.sessions import FuturesSession
+from prometheus_client import CollectorRegistry, Gauge, push_to_gateway
 
-app = Flask(__name__)
 metrics = {}
 
 import requests
+
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# Enabled metrics API
+ENABLE_METRICS_API = os.getenv("ENABLE_METRICS_API", False)
+if (ENABLE_METRICS_API == "True"): ENABLE_METRICS_API = True
+if (ENABLE_METRICS_API == "False"): ENABLE_METRICS_API = False
+if (ENABLE_METRICS_API == True):
+    from flask import Flask, Response
+    app = Flask(__name__)
 
 # Define the directory and ensure it exists
 log_directory = "logs"
@@ -37,14 +48,27 @@ logger.addHandler(handler)
 
 
 GRAPHITE_HOST = os.getenv(
-    "GRAPHITE_HOST", "127.0.0.1"
+    "GRAPHITE_HOST", None
 )  # "host.docker.internal"  # Replace with your Graphite host
 GRAPHITE_PORT = os.getenv(
     "GRAPHITE_PORT", 2003
 )  # Default port for Carbon plaintext protocol
 
 BASE_URL = os.getenv("BASE_URL", "https://gravitate-health.lst.tfo.upm.es/")
+PUSHGATEWAY_URL = os.getenv("PUSHGATEWAY_URL", None)
 # print(GRAPHITE_HOST, GRAPHITE_PORT)
+
+logger_methods = []
+if PUSHGATEWAY_URL != None: logger_methods.append("prometheus")
+if GRAPHITE_HOST != None: logger_methods.append("graphite")
+
+print("ENABLE_METRICS_API", ENABLE_METRICS_API)
+print("PUSHGATEWAY_URL", PUSHGATEWAY_URL)
+print("GRAPHITE_HOST", GRAPHITE_HOST)
+print("GRAPHITE_PORT", GRAPHITE_PORT)
+print("BASE_URL", BASE_URL)
+print("logger_methods", logger_methods)
+
 logger.debug(
     f"BASEURL is {BASE_URL} and HOST IS {GRAPHITE_HOST} and port is  {GRAPHITE_PORT}"
 )
@@ -65,14 +89,14 @@ def log_result(
     status_code,
     warnings,
     method,
-    logger_method=["prometheus"],
+    logger_method=logger_methods,
     timestamp=None,
     bundleid=None,
     lens=None,
     pid=None,
 ):
     """
-    Logs a metric to be exposed for Prometheus.
+    Logs a metric to be exposed for Prometheus or Graphite.
     """
     metric_path = f"""gh_focusing_{method}_{bundleid["name"]}_{pid}_{lens}"""
     timestamp = timestamp or int(time.time())
@@ -83,7 +107,6 @@ def log_result(
         logger.debug(
             f"Value 1 for {status_code} and method {method} and bundle {bundleid} and pid {pid}"
         )
-
     elif status_code == 200 and warnings["preprocessingWarnings"]:
         # print(warnings)
         # print(warnings["preprocessingWarnings"])
@@ -91,13 +114,11 @@ def log_result(
         logger.debug(
             f"Value 2 for {status_code} and {warnings} and method {method} and bundle {bundleid} and pid {pid}"
         )
-
     elif status_code == 200 and len(warnings["lensesWarnings"]) > 0:
         value = 3
         logger.debug(
             f"Value 3 for {status_code} and {warnings} and method {method} and bundle {bundleid} and pid {pid}"
         )
-
     else:
         value = 4
         logger.debug(
@@ -105,24 +126,28 @@ def log_result(
         )
 
     metrics[metric_path] = value
+
+    if "prometheus" in logger_method:
+        registry = CollectorRegistry()
+        g = Gauge(metric_path, 'Description of gauge', registry=registry)
+        g.set(value)
+        push_to_gateway(PUSHGATEWAY_URL, job='gh_monit', registry=registry)
     if "graphite" in logger_method:
         message = f"{metric_path} {value} {timestamp}\n"
-
-        # Open a socket to Graphite and send the data
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
             sock.connect((GRAPHITE_HOST, int(GRAPHITE_PORT)))
             sock.sendall(message.encode("utf-8"))
-    elif "file" in logger_method:
+    if "file" in logger_method:
         message = f"{metric_path} {value} {timestamp}\n"
-
         print(f"Sending to Graphite: {message}", end="")
 
 
-@app.route("/metrics")
-def metrics_endpoint():
-    metrics_data = "\n".join([f"{key} {value}" for key, value in metrics.items()])
-    print(metrics_data)
-    return Response(metrics_data, mimetype="text/plain")
+if ENABLE_METRICS_API == True:
+    @app.route("/metrics")
+    def metrics_endpoint():
+        metrics_data = "\n".join([f"{key} {value}" for key, value in metrics.items()])
+        print(metrics_data)
+        return Response(metrics_data, mimetype="text/plain")
 
 
 # print(LENSES)
@@ -433,7 +458,7 @@ def chek_all_prpcessor_with_post_data(BUNDLES, PATIENT_IDS, BASE_URL):
 
 def log_result_preproc(
     method,
-    logger_method=["graphite"],
+    logger_method=["prometheus"],
     timestamp=None,
     bundleid=None,
     language=None,
@@ -441,9 +466,12 @@ def log_result_preproc(
     applied_extension_count=0,
 ):
     """
-    Sends a metric to Graphite.
+    Sends a metric to Prometheus PushGateway or Graphite.
     """
-    metric_path = f"""gh.preproc.{method}.{bundleid}.{language}"""
+    if "prometheus" in logger_method:
+        metric_path = f"""gh_preproc_{method}_{bundleid}_{language}"""
+    else:
+        metric_path = f"""gh.preproc.{method}.{bundleid}.{language}"""
     timestamp = timestamp or int(time.time())
     if extension_count == 0:
         value = 1
@@ -452,14 +480,18 @@ def log_result_preproc(
     else:
         value = 0
 
-    message = f"{metric_path} {value} {timestamp}\n"
-
-    if "graphite" in logger_method:
-        # Open a socket to Graphite and send the data
+    if "prometheus" in logger_method:
+        registry = CollectorRegistry()
+        g = Gauge(metric_path, 'Description of gauge', registry=registry)
+        g.set(value)
+        push_to_gateway(PUSHGATEWAY_URL, job='gh_monit', registry=registry)
+    elif "graphite" in logger_method:
+        message = f"{metric_path} {value} {timestamp}\n"
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
             sock.connect((GRAPHITE_HOST, int(GRAPHITE_PORT)))
             sock.sendall(message.encode("utf-8"))
     elif "file" in logger_method:
+        message = f"{metric_path} {value} {timestamp}\n"
         print(f"Sending to Graphite: {message}", end="")
 
 
@@ -566,7 +598,8 @@ def fetch_paginated_data(BASEURL):
 
 def main():
     # Run the Flask app in a separate thread
-    threading.Thread(target=lambda: app.run(host="0.0.0.0", port=5000)).start()
+    if ENABLE_METRICS_API == True:
+        threading.Thread(target=lambda: app.run(host="0.0.0.0", port=5000)).start()
 
     while True:
         try:

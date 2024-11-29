@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gh-monit
+  namespace: monitoring
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gh-monit
+  template:
+    metadata:
+      labels:
+        app: gh-monit
+    spec:
+      containers:
+        - name: gh-monit
+          image: gravitate-registry.cr.de-fra.ionos.com/gh-monit:latest
+          ports:
+            - containerPort: 5000
+          env:
+          - name: BASE_URL
+            value: https://fosps.gravitatehealth.eu/
+          - name: ENABLE_METRICS_API
+            value: "False"
+          - name: PUSHGATEWAY_URL
+            value: http://prometheus-prometheus-pushgateway:9091
+          resources: {}

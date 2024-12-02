@@ -88,6 +88,8 @@ LENSES = [
 # LENSES = requests.post(BASE_URL + "/focusing/lenses")
 
 
+batch_metrics = []
+
 def log_result(
     status_code,
     warnings,
@@ -101,9 +103,9 @@ def log_result(
     """
     Logs a metric to be exposed for Prometheus or Graphite.
     """
-    metric_path = f"""gh_focusing_{method}_{bundleid["name"]}_{pid}_{lens}"""
+    metric_name = f"gh_focusing_{method}_{bundleid['name']}_{pid}_{lens}"
+    metric_name = metric_name.replace("-", "_")
     timestamp = timestamp or int(time.time())
-    metric_path = metric_path.replace("-", "_")
     if status_code == 200 and not warnings:
         value = 0
     elif status_code != 200:
@@ -112,8 +114,6 @@ def log_result(
             f"Value 1 for {status_code} and method {method} and bundle {bundleid} and pid {pid}"
         )
     elif status_code == 200 and warnings["preprocessingWarnings"]:
-        # print(warnings)
-        # print(warnings["preprocessingWarnings"])
         value = 2
         logger.debug(
             f"Value 2 for {status_code} and {warnings} and method {method} and bundle {bundleid} and pid {pid}"
@@ -129,21 +129,65 @@ def log_result(
             f"Value 4 for {status_code} and {warnings} and method {method} and bundle {bundleid} and pid {pid}"
         )
 
-    metrics[metric_path] = value
+    metrics[metric_name] = value
+    print("Creating metric: " + metric_name + " with value: " + str(value))
+    batch_metrics.append((metric_name, value))
 
-    if "prometheus" in logger_method:
+def log_result_preproc(
+    method,
+    logger_method=["prometheus"],
+    timestamp=None,
+    bundleid=None,
+    language=None,
+    extension_count=0,
+    applied_extension_count=0,
+):
+    """
+    Sends a metric to Prometheus PushGateway or Graphite.
+    """
+    metric_name = f"gh_preproc_{method}_{bundleid}_{language}"
+    metric_name = metric_name.replace("-", "_")
+    timestamp = timestamp or int(time.time())
+    if extension_count == 0:
+        value = 1
+    elif applied_extension_count == 0:
+        value = 1
+    else:
+        value = 0
+
+    metrics[metric_name] = value
+    print("Creating metric: " + metric_name + " with value: " + str(value))
+    batch_metrics.append((metric_name, value))
+
+def push_metrics_batch():
+    """
+    Pushes all collected metrics in batch to Prometheus PushGateway or Graphite.
+    """
+    if "prometheus" in logger_methods:
         registry = CollectorRegistry()
-        g = Gauge(metric_path, 'Description of gauge', registry=registry)
-        g.set(value)
-        push_to_gateway(PUSHGATEWAY_URL, job='gh_monit', registry=registry)
-    if "graphite" in logger_method:
-        message = f"{metric_path} {value} {timestamp}\n"
+        gauges = {}
+        for metric_name, value in batch_metrics:
+            if metric_name not in gauges:
+                gauges[metric_name] = Gauge(metric_name, 'Description of gauge', registry=registry)
+            gauges[metric_name].set(value)
+        print(f"Pushing batch metrics to Prometheus")
+        for metric_name, gauge in gauges.items():
+            job_name = f"gh_monit"
+            push_to_gateway(PUSHGATEWAY_URL, job=job_name, registry=registry)
+    
+    if "graphite" in logger_methods:
+        timestamp = int(time.time())
+        messages = []
+        for metric_name, value in batch_metrics:
+            metric_path = metric_name.replace("-", "_")
+            message = f"{metric_path} {value} {timestamp}\n"
+            messages.append(message)
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
             sock.connect((GRAPHITE_HOST, int(GRAPHITE_PORT)))
-            sock.sendall(message.encode("utf-8"))
-    if "file" in logger_method:
-        message = f"{metric_path} {value} {timestamp}\n"
-        print(f"Sending to Graphite: {message}", end="")
+            sock.sendall("".join(messages).encode("utf-8"))
+        print(f"Pushing batch metrics to Graphite")
+
+    batch_metrics.clear()
 
 
 if ENABLE_METRICS_API == True:
@@ -459,46 +503,6 @@ def chek_all_prpcessor_with_post_data(BUNDLES, PATIENT_IDS, BASE_URL):
             )
     return 1
 
-
-def log_result_preproc(
-    method,
-    logger_method=["prometheus"],
-    timestamp=None,
-    bundleid=None,
-    language=None,
-    extension_count=0,
-    applied_extension_count=0,
-):
-    """
-    Sends a metric to Prometheus PushGateway or Graphite.
-    """
-    if "prometheus" in logger_method:
-        metric_path = f"""gh_preproc_{method}_{bundleid}_{language}"""
-    else:
-        metric_path = f"""gh.preproc.{method}.{bundleid}.{language}"""
-    timestamp = timestamp or int(time.time())
-    if extension_count == 0:
-        value = 1
-    elif applied_extension_count == 0:
-        value = 1
-    else:
-        value = 0
-
-    if "prometheus" in logger_method:
-        registry = CollectorRegistry()
-        g = Gauge(metric_path, 'Description of gauge', registry=registry)
-        g.set(value)
-        push_to_gateway(PUSHGATEWAY_URL, job='gh_monit', registry=registry)
-    elif "graphite" in logger_method:
-        message = f"{metric_path} {value} {timestamp}\n"
-        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
-            sock.connect((GRAPHITE_HOST, int(GRAPHITE_PORT)))
-            sock.sendall(message.encode("utf-8"))
-    elif "file" in logger_method:
-        message = f"{metric_path} {value} {timestamp}\n"
-        print(f"Sending to Graphite: {message}", end="")
-
-
 def test_preprocessor(BASEURL, epiid, language):
     headers = {"Content-Type": "application/json", "Accept": "application/json"}
 
@@ -650,6 +654,7 @@ def main():
         except Exception as err:
             logger.debug(f"Error on function check_bundles_in_list -> {err}")
 
+        push_metrics_batch()
         time.sleep(3600)
 
 

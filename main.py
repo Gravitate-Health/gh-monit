@@ -29,9 +29,12 @@ if (ENABLE_METRICS_API == True):
 log_directory = "logs"
 if not os.path.exists(log_directory):
     os.makedirs(log_directory)
-# Set up the logger
-logger = logging.getLogger("my_logger")
-logger.setLevel(logging.DEBUG)  # Configuration
+# Set up the logger for this module
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)  # Configuration
+
+# Enable logging to the console for all modules
+logging.basicConfig(level=logging.INFO)
 
 
 # Configure the rotating file handler
@@ -100,6 +103,7 @@ def log_result(
     """
     metric_path = f"""gh_focusing_{method}_{bundleid["name"]}_{pid}_{lens}"""
     timestamp = timestamp or int(time.time())
+    metric_path = metric_path.replace("-", "_")
     if status_code == 200 and not warnings:
         value = 0
     elif status_code != 200:

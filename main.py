@@ -131,7 +131,7 @@ def log_result(
 
     metrics[metric_name] = value
     print("Creating metric: " + metric_name + " with value: " + str(value))
-    batch_metrics.append((metric_name, value))
+    batch_metrics.append((metric_name, value, bundleid['name'], pid, lens, method, None))
 
 def log_result_preproc(
     method,
@@ -157,7 +157,7 @@ def log_result_preproc(
 
     metrics[metric_name] = value
     print("Creating metric: " + metric_name + " with value: " + str(value))
-    batch_metrics.append((metric_name, value))
+    batch_metrics.append((metric_name, value, bundleid['name'], None, None, method, language))
 
 def push_metrics_batch():
     """
@@ -166,10 +166,10 @@ def push_metrics_batch():
     if "prometheus" in logger_methods:
         registry = CollectorRegistry()
         gauges = {}
-        for metric_name, value in batch_metrics:
+        for metric_name, value, bundleid, pid, lens, method, language in batch_metrics:
             if metric_name not in gauges:
-                gauges[metric_name] = Gauge(metric_name, 'Description of gauge', registry=registry)
-            gauges[metric_name].set(value)
+                gauges[metric_name] = Gauge(metric_name, 'Description of gauge', ['bundleId', 'patientId', 'lens', 'preprocessMethod', 'language'], registry=registry)
+            gauges[metric_name].labels(bundleId=bundleid, patientId=pid, lens=lens, preprocessMethod=method, language=language).set(value)
         print(f"Pushing batch metrics to Prometheus")
         for metric_name, gauge in gauges.items():
             job_name = f"gh_monit"
@@ -178,7 +178,7 @@ def push_metrics_batch():
     if "graphite" in logger_methods:
         timestamp = int(time.time())
         messages = []
-        for metric_name, value in batch_metrics:
+        for metric_name, value, bundleid, pid in batch_metrics:
             metric_path = metric_name.replace("-", "_")
             message = f"{metric_path} {value} {timestamp}\n"
             messages.append(message)
@@ -198,7 +198,6 @@ if ENABLE_METRICS_API == True:
         return Response(metrics_data, mimetype="text/plain")
 
 
-# print(LENSES)
 PATIENT_IDS = [
     "alicia-1",
     "Cecilia-1",
@@ -498,7 +497,7 @@ def chek_all_prpcessor_with_post_data(BUNDLES, PATIENT_IDS, BASE_URL):
                 warnings=warnings,
                 method="allpreprocesspost",
                 bundleid=bundleid,
-                lens="all",
+                lens="allLenses",
                 pid=pid,
             )
     return 1

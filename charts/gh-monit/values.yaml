@@ -1,0 +1,54 @@
+replicaCount: 1
+
+image:
+  repository: ghcr.io/gravitate-health/gh-monit
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 5000
+  targetPort: 5000
+
+config:
+  BASE_URL: https://fosps.gravitatehealth.eu/
+  ENABLE_METRICS_API: "False"
+  PUSHGATEWAY_URL: http://prometheus-prometheus-pushgateway:9091
+
+secretEnv:
+  EXAMPLE_SECRET: ""
+
+resources: {}
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # limits:
+  #   cpu: 500m
+  #   memory: 512Mi
+
+networking:
+  # Options: ingress, istio, none
+  # Default is none because this is an internal service.
+  type: none
+
+  ingress:
+    enabled: true
+    className: ""
+    annotations: {}
+    hosts:
+      - host: gh-monit.local
+        paths:
+          - path: /
+            pathType: Prefix
+    tls: []
+
+  istio:
+    gateway:
+      enabled: false
+      name: ""
+      namespace: ""
+    virtualService:
+      enabled: false
+      hosts:
+        - gh-monit.local
+      gateways: []

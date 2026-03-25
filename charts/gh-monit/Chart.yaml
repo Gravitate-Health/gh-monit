@@ -1,0 +1,6 @@
+apiVersion: v2
+name: gh-monit
+description: A Helm chart for deploying gh-monit
+type: application
+version: 0.1.0
+appVersion: "1.0.0"

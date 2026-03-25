@@ -14,6 +14,8 @@
   - [Introduction](#introduction)
   - [Deployment](#deployment)
       - [Kubernetes (Kustomize)](#kubernetes-kustomize)
+      - [Deploy via Helm (OCI)](#deploy-via-helm-oci)
+      - [Local Development](#local-development)
   - [Usage](#usage)
   - [Known issues and limitations](#known-issues-and-limitations)
   - [Getting help](#getting-help)
@@ -38,6 +40,25 @@ kubectl apply -k kubernetes/base
 Development: 
 ```bash
 kubectl apply -k kubernetes/dev
+```
+
+### Deploy via Helm (OCI)
+
+```bash
+# Login to registry (if private)
+helm registry login ghcr.io
+
+# Deploy directly from the registry
+helm install my-release oci://ghcr.io/<your-org>/charts/<chart-name> --version <version>
+```
+
+The chart source is available in `charts/gh-monit` for local packaging and testing.
+
+### Local Development
+
+```bash
+helm lint charts/gh-monit
+helm template my-release charts/gh-monit
 ```
 
 

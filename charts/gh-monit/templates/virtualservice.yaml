@@ -1,0 +1,23 @@
+{{- if and (eq .Values.networking.type "istio") .Values.networking.istio.virtualService.enabled }}
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: {{ include "gh-monit.fullname" . }}
+  labels:
+    {{- include "gh-monit.labels" . | nindent 4 }}
+spec:
+  hosts:
+    {{- toYaml .Values.networking.istio.virtualService.hosts | nindent 4 }}
+  gateways:
+    {{- if .Values.networking.istio.virtualService.gateways }}
+    {{- toYaml .Values.networking.istio.virtualService.gateways | nindent 4 }}
+    {{- else }}
+    - {{ default "mesh" .Values.networking.istio.gateway.name | quote }}
+    {{- end }}
+  http:
+    - route:
+        - destination:
+            host: {{ include "gh-monit.fullname" . }}
+            port:
+              number: {{ .Values.service.port }}
+{{- end }}
